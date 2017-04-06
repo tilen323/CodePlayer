@@ -2,8 +2,7 @@
 
 # About
 
-Write HTML & CSS code:
-- a tool that enables you to learn, experiment and teach code
+Write HTML & CSS code - tool that enables you to learn and experiment with code
 
 Made this tool while learning jQuery
 
