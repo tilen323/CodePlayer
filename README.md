@@ -1,10 +1,10 @@
+# Code Player
+
 # About
 
-GAE boilerplate for SmartNinja **Web development 2** course.
+Write HTML & CSS code:
+- a tool that enables you to learn, experiment and teach code
 
-# Usage
+Made this tool while learning jQuery
 
-1. Click on Download ZIP
-2. Save on your disk and unzip
-3. Change the application ID in app.yaml
-4. Build something nice ;)
+url: http://test-tilen-123.appspot.com/code-player
