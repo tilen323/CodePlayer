@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block active %}
+    <li><a href="/">Home</a></li>
+    <li class="active2"><a href="/reaction-test">ReactionTest</a></li>
+    <li><a href="/code-player">CodePlayer</a></li>
+    <li><a href="#">Page 3</a></li>
+{% endblock active %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="reaction-test">
+            <h1>Test your reactions:</h1>
+            <h4>Click on the boxes and circles as quickly as you can!</h4>
+
+            <div class="well">
+
+                <div id="box">
+                    <div id="shape"></div>
+                </div><br>
+
+                <p><strong>Your time was: <span id="spanParagraph"></span></strong></p>
+                <p><strong>Best time: <span id="bestTime"></span></strong></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../assets/custom/js/script.js"></script>
+{% endblock content %}

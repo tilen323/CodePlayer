@@ -1,0 +1,127 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    font-family: helvetica, sans-serif;
+}
+
+.navbar-toggle {
+    background-color: #4286f4;
+    color: white;
+    border: 1px solid lightgrey;
+}
+
+.navbar-toggle:hover {
+    background-color: #70a6ff;
+}
+
+.navbar {
+    margin: 0px;
+    border-bottom: 1px solid grey;
+    border-radius: 0px;
+}
+
+.active2 {
+    background-color: #e8e8e8;
+}
+
+
+/* Reaction Test */
+
+.reaction-test .well {
+    width: 540px;
+}
+
+#box {
+    border: 1px solid black;
+    height: 500px;
+    width: 500px;
+    position: relative;
+
+}
+
+#shape {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    display: none;
+    position: relative;
+
+}
+
+/* Code Player */
+
+.c-container {
+    background-color: #70a6ff;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+
+}
+
+#c-logo {
+    float: left;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#button-container {
+    width: 189px;
+    margin: 0 auto;
+}
+
+.c-button {
+    float: left;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-right: none;
+    padding: 5px 10px;
+    background-color: #d6d6d6;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#html {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#output {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right: 1px solid grey;
+}
+
+.active {
+    background-color: #bababa;
+    opacity: 1;
+}
+
+.hover-button {
+    background-color: #fcfcfc;
+}
+
+#bodyContainer {
+    height: 100%;
+}
+
+#bodyContainer textarea {
+    resize: none;
+    border-right: 1px solid grey;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+
+.panels {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#bodyContainer iframe {
+    border: none;
+}

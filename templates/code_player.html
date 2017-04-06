@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block active %}
+    <li><a href="/">Home</a></li>
+    <li><a href="/reaction-test">ReactionTest</a></li>
+    <li class="active2"><a href="/code-player">CodePlayer</a></li>
+    <li><a href="#">Page 3</a></li>
+{% endblock active %}
+
+
+{% block content %}
+    <div class="container-fluid c-container">
+        <div id="c-logo">CodePlayer</div>
+
+        <div id="button-container">
+            <div class="c-button active" id="html">HTML</div>
+            <div class="c-button" id="css">CSS</div>
+            <div class="c-button active" id="output">Output</div>
+        </div>
+    </div>
+
+    <div id="bodyContainer">
+
+        <textarea id="htmlPanel" class="textarePanel panels"><p>Hello World!</p></textarea>
+
+        <textarea id="cssPanel" class="textarePanel panels hidden">p {color:green;}</textarea>
+
+        <iframe id="outputPanel" class="panels"></iframe>
+
+    </div>
+
+    <script type="text/javascript" src="../assets/custom/js/c-player.js"></script>
+{% endblock content %}
