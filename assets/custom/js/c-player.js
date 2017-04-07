@@ -8,9 +8,17 @@ function updateOutput() {
 
 $(".c-button").hover(function() {
 
+    var panelId = $(this).attr("id") + "Panel";
+
+    $("#" + panelId).addClass("preview");
+
     $(this).addClass("hover-button");
 
 }, function() {
+
+    var panelId = $(this).attr("id") + "Panel";
+
+    $("#" + panelId).removeClass("preview");
 
     $(this).removeClass("hover-button");
 
@@ -29,7 +37,7 @@ $(".c-button").click(function() {
     $(".panels").width(($(window).width() / numOfActivePanels) - 7);
 });
 
-$("#bodyContainer").height($(window).height() - 98);
+$("#bodyContainer").height($(window).height() - 97);
 $(".panels").width(($(window).width() / 2) - 7);
 
 updateOutput();

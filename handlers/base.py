@@ -2,6 +2,9 @@ import os
 import jinja2
 import webapp2
 
+import uuid
+from google.appengine.api import memcache
+
 template_dir = os.path.join(os.path.dirname(__file__), "../templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
 
@@ -20,6 +23,11 @@ class BaseHandler(webapp2.RequestHandler):
     def render_template(self, view_filename, params=None):
         if not params:
             params = {}
+
+        csrf_token = str(uuid.uuid4())  # convert UUID to string
+        memcache.add(key=csrf_token, value=True, time=600)
+        params["csrf_token"] = csrf_token
+
         template = jinja_env.get_template(view_filename)
         return self.response.out.write(template.render(params))
 

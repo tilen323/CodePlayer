@@ -69,6 +69,11 @@ document.getElementById("shape").onclick = function() {
     if (timeTaken < bestTry) {
         bestTry = timeTaken
         document.getElementById("bestTime").innerHTML = bestTry + " sec";
+
+        document.getElementById("submitBestTime").innerHTML = bestTry;
+        document.getElementById("hiddenTime").innerHTML = bestTry;
+
+        $("#form-high-score").fadeIn();
     }
 
     appearAfterDelay();
