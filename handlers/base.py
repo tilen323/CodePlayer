@@ -25,7 +25,7 @@ class BaseHandler(webapp2.RequestHandler):
             params = {}
 
         csrf_token = str(uuid.uuid4())  # convert UUID to string
-        memcache.add(key=csrf_token, value=True, time=600)
+        memcache.add(key=csrf_token, value=True, time=3600)
         params["csrf_token"] = csrf_token
 
         template = jinja_env.get_template(view_filename)

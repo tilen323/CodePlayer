@@ -19,11 +19,11 @@ function getRandomColor() {
 
 function makeShapeAppear() {
 
-    var left = Math.random() * 300;
+    var left = Math.random() * 400;
 
-    var top = Math.random() * 300;
+    var top = Math.random() * 400;
 
-    var width = (Math.random() * 200) + 10;
+    var width = (Math.random() * 70) + 20;
 
     if (Math.random() > 0.5) {
 
