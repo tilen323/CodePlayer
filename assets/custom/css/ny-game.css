@@ -1,0 +1,69 @@
+/* NY - Game */
+.ny-game .navbar {
+    display: none;
+}
+.rotate-180 {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+.ny-game {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+    padding: 5px;
+    font-size: 0px;
+}
+.ny-game-box {
+    margin 0px auto;
+    width: 1400px;
+}
+
+/* Colors */
+.ny-white {
+    background-color: #FFF;
+}
+.ny-pink {
+    background-color: #ED008C;
+}
+.ny-yellow {
+    background-color: #F4ED2F;
+}
+.ny-light-blue {
+    background-color: #00AEEF;
+}
+.ny-blue {
+    background-color: #283890;
+}
+.ny-green {
+    background-color: #08ad37;
+}
+.ny-red {
+    background-color: #EA4235;
+}
+
+/* Squares */
+.square {
+    padding: 3px;
+    display: inline-block;
+}
+.square div {
+    width: 36px;
+    height: 36px;
+}
+
+/* Menu */
+.ny-menu-box {
+    position: fixed;
+    top: 5px;
+    left: 1400px;
+    width: 100px;
+}
+.ny-menu-item {
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    margin: 3px;
+    padding: 6px;
+}

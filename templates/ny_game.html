@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+<title>PartyGame</title>
+{% endblock pageTitle %}
+
+{% block bodyClass%}
+<body class="ny-game" draggable="false">
+{% endblock bodyClass %}
+
+{% block active %}
+{% endblock active %}
+
+
+{% block content %}
+<div class="ny-game-box"></div>
+<div class="ny-menu-box">
+    <div class="ny-menu-item ny-refresh ny-green"><div><img src="/assets/svg/refresh.svg"></div></div>
+    <div class="ny-menu-item ny-help ny-yellow"><img src="/assets/svg/help.svg"></div>
+    <div class="ny-menu-item ny-load ny-light-blue"><img src="/assets/svg/save.svg"></div>
+    <div class="ny-menu-item ny-save ny-blue"><img class="rotate-180" src="/assets/svg/save.svg"></div>
+    <div class="ny-menu-item ny-lmb ny-white"><img src="/assets/svg/mouse-left.svg"></div>
+    <div class="ny-menu-item ny-rmb ny-pink"><img src="/assets/svg/mouse-right.svg"></div>
+</div>
+
+<script type="text/javascript" src="../assets/custom/js/ny-game.js"></script>
+{% endblock content %}
