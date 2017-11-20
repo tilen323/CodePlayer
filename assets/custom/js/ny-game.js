@@ -20,7 +20,7 @@ $(document).mousedown(function(e) {
 function addSquares(numOfSquares) {
     var square = '';
     for (i = 1; i <= numOfSquares; i++) {
-        square += '<div class="square"><div id=ny-cell-' + i + ' class="ny-cell ny-pink"></div></div>';
+        square += '<div class="ny-square"><div id=ny-cell-' + i + ' class="ny-cell ny-pink"></div></div>';
     }
     $('.ny-game-box').append(square);
 };
@@ -30,9 +30,21 @@ addSquares(660);
 var lmbColor = 'ny-white';
 var rmbColor = 'ny-pink';
 
+// Change color of lmb and rmb
+$(".ny-color-btn").on("mousedown",function(e){
+    var pickedColor = $(this).html();
+    if( e.button == 2 ) {
+      rmbColor = pickedColor;
+      $('.ny-rmb').attr('class', 'ny-menu-item ny-rmb').addClass(pickedColor);
+    } else {
+      lmbColor = pickedColor;
+      $('.ny-lmb').attr('class', 'ny-menu-item ny-lmb').addClass(pickedColor);
+    }
+});
+
 // Change color of square
 // - when you drag your mouse
-$(".square").mouseover(function(){
+$(".ny-square").mouseover(function(){
     if(!isDown) {
         return false;
     } else if(isDown == 'rmb') {
@@ -42,7 +54,7 @@ $(".square").mouseover(function(){
     }
 });
 // - when you click your mouse
-$(".square").on("mousedown",function(e){
+$(".ny-square").on("mousedown",function(e){
     if( e.button == 2 ) {
       $('div', this).attr('class', 'ny-cell').addClass(rmbColor);
     } else {
@@ -51,5 +63,5 @@ $(".square").on("mousedown",function(e){
 });
 // - start from scratch
 $('.ny-refresh').click(function() {
-    $('.square div').attr('class', 'ny-cell').addClass('ny-pink');
+    $('.ny-square div').attr('class', 'ny-cell').addClass('ny-pink');
 });

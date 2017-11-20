@@ -14,6 +14,7 @@
     background-color: #000;
     padding: 5px;
     font-size: 0px;
+    font-family: 'Source Code Pro', monospace;
 }
 .ny-game-box {
     margin 0px auto;
@@ -21,34 +22,23 @@
 }
 
 /* Colors */
-.ny-white {
-    background-color: #FFF;
-}
-.ny-pink {
-    background-color: #ED008C;
-}
-.ny-yellow {
-    background-color: #F4ED2F;
-}
-.ny-light-blue {
-    background-color: #00AEEF;
-}
-.ny-blue {
-    background-color: #283890;
-}
-.ny-green {
-    background-color: #08ad37;
-}
-.ny-red {
-    background-color: #EA4235;
-}
+.ny-white {background-color: #FFF;}
+.ny-gray {background-color: #666;}
+.ny-pink {background-color: #ED008C;}
+.ny-light-pink {background-color: #ff14e3;}
+.ny-yellow {background-color: #F4ED2F;}
+.ny-light-yellow {background-color: #b4ff2a;}
+.ny-blue {background-color: #283890;}
+.ny-light-blue {background-color: #00AEEF;}
+.ny-green {background-color: #08ad37;}
+.ny-red {background-color: #EA4235;}
 
 /* Squares */
-.square {
+.ny-square {
     padding: 3px;
     display: inline-block;
 }
-.square div {
+.ny-square div {
     width: 36px;
     height: 36px;
 }
@@ -66,4 +56,10 @@
     display: inline-block;
     margin: 3px;
     padding: 6px;
+}
+.ny-menu--color span {
+    font-size: 16px;
+    color: #FFF;
+    display: block;
+    margin-top: 19px;
 }
