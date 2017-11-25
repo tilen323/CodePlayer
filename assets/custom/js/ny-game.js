@@ -79,6 +79,7 @@ $('.ny-refresh').click(function() {
 // Store image in an array
 var nyImageArray= [];
 $('.ny-alert').click(function() {
+    nyImageArray= [];
     for (i = 0; i < numOfSquares; i++) {
         var cellColor = $('#ny-cell-' + (i + 1)).html();
         nyImageArray.push(cellColor);
