@@ -18,7 +18,7 @@
 }
 .ny-game-box {
     margin 0px auto;
-    width: 1400px;
+    width: 840px;
 }
 
 /* Colors */
@@ -31,7 +31,8 @@
 .ny-blue {background-color: #283890;}
 .ny-light-blue {background-color: #00AEEF;}
 .ny-green {background-color: #08ad37;}
-.ny-red {background-color: #EA4235;}
+.ny-red {background-color: #ed0b0b;}
+.ny-purple {background-color: #bb00ff;}
 
 /* Squares */
 .ny-square {
@@ -47,7 +48,7 @@
 .ny-menu-box {
     position: fixed;
     top: 5px;
-    left: 1400px;
+    left: 860px;
     width: 100px;
 }
 .ny-menu-item {
