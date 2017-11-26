@@ -73,12 +73,12 @@ $(".ny-square").on("mousedown",function(e){
 });
 // - start from scratch
 $('.ny-refresh').click(function() {
-    $('.ny-square div').attr('class', 'ny-cell').addClass('ny-pink').html('ny-pink');
+    $('.ny-square div').attr('class', 'ny-cell ny-pink').html('ny-pink');
 });
 
 // Store image in an array
 var nyImageArray= [];
-$('.ny-alert').click(function() {
+$('.ny-store').click(function() {
     nyImageArray= [];
     for (i = 0; i < numOfSquares; i++) {
         var cellColor = $('#ny-cell-' + (i + 1)).html();
@@ -94,4 +94,44 @@ function buildImageFromArray(imgArray) {
 }
 $('.ny-build').click(function() {
     buildImageFromArray(nyImageArray);
+});
+
+// Game timer
+var watchSec = 5;
+var playSec = 60;
+function startNyGame(watchDuration) {
+    var timer, counter = watchDuration;
+    $('#ny-timer').delay(counter * 1000 + 1000).fadeOut('fast');
+    timer = setInterval(function() {
+        $("#ny-timer").html(--counter);
+        if (counter == 0) {
+            clearInterval(timer);
+            $("#ny-timer").html('start');
+        };
+    }, 1000);
+    $('.ny-square div').delay(1000 * watchSec).queue(function() {
+        $(this).attr('class', 'ny-cell ny-pink').html('ny-pink');
+        $(this).dequeue();
+    });
+}
+
+function startNyGamePlay(playDuration) {
+    var timer, counter = playDuration;
+    $('#ny-timer').delay(counter * 1000 + 1000).fadeOut();
+    timer = setInterval(function() {
+        $("#ny-timer").html(--counter);
+        if (counter == 0) {
+            clearInterval(timer);
+            $("#ny-timer").html('end');
+        };
+    }, 1000);
+}
+
+$('.ny-start-game').click(function() {
+    $('#ny-timer').html(watchSec).show();
+    startNyGame(watchSec);
+    $('#ny-timer').queue(function() {
+        $(this).html(playSec).show();
+        startNyGamePlay(playSec);
+    });
 });

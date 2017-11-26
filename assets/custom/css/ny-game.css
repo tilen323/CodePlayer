@@ -64,3 +64,15 @@
     display: block;
     margin-top: 19px;
 }
+
+/* Timer */
+.ny-timer-box {
+    position: fixed;
+    bottom: 150px;
+    left: 860px;
+    width: 100px;
+    font-size: 42px;
+    font-family: 'Source Code Pro', monospace;
+    color: #FFF;
+    text-align: center;
+}
