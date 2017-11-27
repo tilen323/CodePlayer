@@ -15,31 +15,46 @@
 {% block content %}
 <div class="ny-game-box"></div>
 <div class="ny-menu-box">
-    <div class="ny-menu-item ny-refresh ny-green"><div><img src="/assets/svg/refresh.svg"></div></div>
-    <div class="ny-menu-item ny-help ny-yellow"><img src="/assets/svg/help.svg"></div>
-    <div class="ny-menu-item ny-load ny-light-blue"><img src="/assets/svg/save.svg"></div>
-    <div class="ny-menu-item ny-save ny-blue"><img class="rotate-180" src="/assets/svg/save.svg"></div>
-    <div class="ny-menu-item ny-lmb ny-white"><img src="/assets/svg/mouse-left.svg"></div>
-    <div class="ny-menu-item ny-rmb ny-pink"><img src="/assets/svg/mouse-right.svg"></div>
+    <div class="ny-menu-item ny-refresh ny-p"><img src="/assets/svg/refresh.svg"></div>
+    <div class="ny-menu-item ny-help ny-y"><img src="/assets/svg/help.svg"></div>
+    <div class="ny-menu-item ny-start-game ny-g"><img src="/assets/svg/gamepad.svg"></div>
+    <div class="ny-menu-item ny-store ny-lb"><img src="/assets/svg/save.svg"></div>
     <div class="ny-menu--color">
         <span>Colors:</span>
-        <div class="ny-menu-item ny-color-btn ny-light-blue">ny-light-blue</div>
-        <div class="ny-menu-item ny-color-btn ny-blue">ny-blue</div>
-        <div class="ny-menu-item ny-color-btn ny-purple">ny-purple</div>
-        <div class="ny-menu-item ny-color-btn ny-red">ny-red</div>
-        <div class="ny-menu-item ny-color-btn ny-gray">ny-gray</div>
-        <div class="ny-menu-item ny-color-btn ny-yellow">ny-yellow</div>
-        <div class="ny-menu-item ny-color-btn ny-white">ny-white</div>
-        <div class="ny-menu-item ny-color-btn ny-green">ny-green</div>
-
-        <div class="ny-menu-item ny-store ny-gray"></div>
-        <div class="ny-menu-item ny-build ny-gray"></div>
-        <div class="ny-menu-item ny-start-game ny-gray"></div>
+        <div class="ny-menu-item ny-color-btn ny-lb">ny-lb</div>
+        <div class="ny-menu-item ny-color-btn ny-b">ny-b</div>
+        <div class="ny-menu-item ny-color-btn ny-pr">ny-pr</div>
+        <div class="ny-menu-item ny-color-btn ny-r">ny-r</div>
+        <div class="ny-menu-item ny-color-btn ny-g">ny-g</div>
+        <div class="ny-menu-item ny-color-btn ny-y">ny-y</div>
+        <div class="ny-menu-item ny-color-btn ny-w">ny-w</div>
+        <div class="ny-menu-item ny-color-btn ny-gr">ny-gr</div>
+        <div class="mouse-buttons">
+            <div class="ny-menu-item ny-lmb ny-w"><img src="/assets/svg/mouse-left.svg"></div>
+            <div class="ny-menu-item ny-rmb ny-p"><img src="/assets/svg/mouse-right.svg"></div>
+        </div>
     </div>
 </div>
 
 <div class="ny-timer-box">
     <span id="ny-timer"></span>
+</div>
+
+<div class="ny-result-wrap ny-hidden">
+    <div class="ny-result-box">
+        <span class="ny-result-close">close<img src="/assets/svg/x-mark.svg"></span>
+        <p class="ny-result--title">Results:</p>
+        <p class="ny-result--score"></p>
+        <p class="ny-result--text"></p>
+    </div>
+</div>
+
+<div class="ny-temp-wrap ny-hidden">
+    <div class="ny-temp-array-box">
+        <img id="ny-temp-close" src="/assets/svg/x-mark.svg">
+        <span id="ny-temp-help">To copy this press ctrl + c</span>
+        <p id="ny-temp-array-text"></p>
+    </div>
 </div>
 
 <script type="text/javascript" src="../assets/custom/js/ny-game.js"></script>
