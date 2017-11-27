@@ -15,10 +15,8 @@
 {% block content %}
 <div class="ny-game-box"></div>
 <div class="ny-menu-box">
-    <div class="ny-menu-item ny-refresh ny-p"><img src="/assets/svg/refresh.svg"></div>
-    <div class="ny-menu-item ny-help ny-y"><img src="/assets/svg/help.svg"></div>
-    <div class="ny-menu-item ny-start-game ny-g"><img src="/assets/svg/gamepad.svg"></div>
-    <div class="ny-menu-item ny-store ny-lb"><img src="/assets/svg/save.svg"></div>
+    <div class="ny-menu-item ny-lmb ny-w"><img src="/assets/svg/mouse-left.svg"></div>
+    <div class="ny-menu-item ny-rmb ny-p"><img src="/assets/svg/mouse-right.svg"></div>
     <div class="ny-menu--color">
         <span>Colors:</span>
         <div class="ny-menu-item ny-color-btn ny-lb">ny-lb</div>
@@ -30,9 +28,12 @@
         <div class="ny-menu-item ny-color-btn ny-w">ny-w</div>
         <div class="ny-menu-item ny-color-btn ny-gr">ny-gr</div>
         <div class="mouse-buttons">
-            <div class="ny-menu-item ny-lmb ny-w"><img src="/assets/svg/mouse-left.svg"></div>
-            <div class="ny-menu-item ny-rmb ny-p"><img src="/assets/svg/mouse-right.svg"></div>
+            <div class="ny-menu-item ny-store ny-lb"><img src="/assets/svg/save.svg"></div>
         </div>
+    </div>
+    <div class="ny-menu--menu">
+        <div class="ny-menu-item ny-start-game ny-g"><img src="/assets/svg/gamepad.svg"></div>
+        <!--<div class="ny-menu-item ny-refresh ny-p"><img src="/assets/svg/refresh.svg"></div>-->
     </div>
 </div>
 
@@ -49,11 +50,17 @@
     </div>
 </div>
 
-<div class="ny-temp-wrap ny-hidden">
-    <div class="ny-temp-array-box">
-        <img id="ny-temp-close" src="/assets/svg/x-mark.svg">
-        <span id="ny-temp-help">To copy this press ctrl + c</span>
-        <p id="ny-temp-array-text"></p>
+<div class="ny-save-wrap ny-hidden">
+    <div class="ny-save-array-box">
+        <span id="ny-save-help">Save image?</span>
+        <!--<p id="ny-temp-array-text"></p>-->
+        <form class="ny-submit-image-form" method="post" action="javascript:ajaxSaveImage();">
+            <input id="ny-name" name="name" maxlength="20" type="text" placeholder="Your name.." required>
+            <textarea id="ny-save-array" class="ny-hidden" name="image"></textarea>
+            <button class="btn btn-primary ny-save-btn">SAVE</button>
+            <span class="btn btn-danger ny-cancel-btn">CANCEL</span>
+            <div id="ny-error"></div>
+        </form>
     </div>
 </div>
 

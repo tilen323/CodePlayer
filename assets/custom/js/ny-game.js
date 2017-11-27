@@ -17,7 +17,36 @@ $(document).mousedown(function(e) {
 });
 
 // Ny Game Images
-var imageStar = ['ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p'];
+var imageStar = ['ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+ 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+  'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+   'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+    'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p',
+     'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+      'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+       'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+        'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-y',
+         'ny-y', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y',
+          'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p',
+           'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y',
+            'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y',
+             'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+              'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-y', 'ny-y', 'ny-g',
+               'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y',
+                'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+                 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y',
+                  'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y',
+                   'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+                    'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-g', 'ny-y', 'ny-y',
+                     'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y',
+                     'ny-y', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p',
+                      'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+                       'ny-p', 'ny-g', 'ny-g', 'ny-y', 'ny-y', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g', 'ny-g',
+                        'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-g',
+                         'ny-g', 'ny-g', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+                          'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+                           'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
+                            'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p'];
 
 // Add squares to the board
 function addSquares(squareNumber) {
@@ -101,22 +130,48 @@ $('.ny-refresh').click(function() {
 
 // Store image in an array
 var nyImageArray = [];
-var nyImageArrayHtml = [];
+var nyImageArrayHtml = '';
 $('.ny-store').click(function() {
     nyImageArray = [];
-    nyImageArrayHtml = [];
+    nyImageArrayHtml = '';
+    $('.ny-save-btn').show();
+    $('.ny-cancel-btn').html('CANCEL');
+    $('#ny-error').html('');
     for (i = 0; i < numOfSquares; i++) {
         var cellColor = $('#ny-cell-' + (i + 1)).html();
         nyImageArray.push(cellColor);
-        nyImageArrayHtml.push("'" + cellColor + "', ");
+        if (cellColor == 'ny-w') {
+            nyImageArrayHtml += 'a';
+        } else if (cellColor == 'ny-g') {
+            nyImageArrayHtml += 'b';
+        } else if (cellColor == 'ny-p') {
+            nyImageArrayHtml += 'c';
+        } else if (cellColor == 'ny-lp') {
+            nyImageArrayHtml += 'd';
+        } else if (cellColor == 'ny-y') {
+            nyImageArrayHtml += 'e';
+        } else if (cellColor == 'ny-ly') {
+            nyImageArrayHtml += 'f';
+        } else if (cellColor == 'ny-b') {
+            nyImageArrayHtml += 'g';
+        } else if (cellColor == 'ny-lb') {
+            nyImageArrayHtml += 'h';
+        } else if (cellColor == 'ny-gr') {
+            nyImageArrayHtml += 'i';
+        } else if (cellColor == 'ny-r') {
+            nyImageArrayHtml += 'j';
+        } else if (cellColor == 'ny-pr') {
+            nyImageArrayHtml += 'k';
+        }
     }
-    $('.ny-temp-wrap').removeClass('ny-hidden');
-    $('#ny-temp-array-text').html(nyImageArrayHtml);
+    $('.ny-save-wrap').removeClass('ny-hidden');
+    $('#ny-save-array').val(nyImageArrayHtml);
 });
 
-// Temp close button
-$('#ny-temp-close').click(function() {
-    $('.ny-temp-wrap').addClass('ny-hidden');
+// Save screen close
+$('.ny-cancel-btn').click(function() {
+    $('.ny-save-wrap').addClass('ny-hidden');
+    $('#ny-name').val('');
 });
 
 
@@ -145,8 +200,8 @@ function compareArrays(arrayOne, arrayTwo) {
 }
 
 // Game timer
-var watchSec = 5;
-var playSec = 59;
+var watchSec = 10;
+var playSec = 99;
 
 function startNyGame(watchDuration) {
     var timer, counter = watchDuration;
@@ -181,6 +236,7 @@ $('.ny-start-game').click(function() {
     var array1 = imageStar;
     var array2 = [];
     $('#ny-timer').html(watchSec).show();
+    $(this).addClass('ny-avoid-clicks');
     buildImageFromArray(array1);
     startNyGame(watchSec);
     $('#ny-timer').queue(function() {
@@ -197,7 +253,7 @@ $('.ny-start-game').click(function() {
         var finalScoreString = resultString(finalScore);
         $('.ny-result--score').html(finalScore + '%');
         $('.ny-result--text').html(finalScoreString);
-
+        $('.ny-start-game').removeClass('ny-avoid-clicks');
         $(this).removeClass('ny-hidden');
         $(this).dequeue();
     });
@@ -208,3 +264,21 @@ $('.ny-result-close').click(function() {
     $('.ny-result-wrap').addClass('ny-hidden');
 });
 
+function ajaxSaveImage() {
+    var nyInput = $("#ny-name").val();
+    var nyInputImage = $("#ny-save-array").val();
+    $.ajax({
+        type: "POST",
+        url: "/ny-game",
+        data: JSON.stringify({
+            "name": nyInput,
+            "image": nyInputImage
+        }),
+        dataType: "json"
+    })
+        .done(function(jsonResponse) {
+            $("#ny-error").html(jsonResponse.message);
+            $('.ny-cancel-btn').html('CLOSE');
+            $('.ny-save-btn').hide();
+        });
+}
