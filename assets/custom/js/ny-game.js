@@ -52,13 +52,31 @@ var imageStar = ['ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p', 'ny-p',
 function addSquares(squareNumber) {
     var square = '';
     for (i = 1; i <= squareNumber; i++) {
-        square += '<div class="ny-square"><div id=ny-cell-' + i + ' class="ny-cell ny-p">ny-p</div></div>';
+        square += '<div class="ny-square"><div id="ny-cell-' + i + '" class="ny-cell ny-p">ny-p</div></div>';
     }
     $('.ny-game-box').append(square);
 };
 
+// Add small squares to the board
+function addSmallSquares1(squareNumber) {
+    var square = '';
+    for (i = 1; i <= squareNumber; i++) {
+        square += '<div class="ny-square ny-small-square"><div id="ny-small-cell-a' + i + '" class="ny-p"></div></div>';
+    }
+    $('.ny-compare-box-1').append(square);
+};
+function addSmallSquares2(squareNumber) {
+    var square = '';
+    for (i = 1; i <= squareNumber; i++) {
+        square += '<div class="ny-square ny-small-square"><div id="ny-small-cell-b' + i + '" class="ny-p"></div></div>';
+    }
+    $('.ny-compare-box-2').append(square);
+};
+
 var numOfSquares = 400;
 addSquares(numOfSquares);
+addSmallSquares1(numOfSquares);
+addSmallSquares2(numOfSquares);
 
 // Button colors
 var lmbColor = 'ny-w';
@@ -69,17 +87,17 @@ var nyScoreString = '';
 function resultString(gameScore) {
     gameScore = parseInt(gameScore);
     if (gameScore < 70) {
-        nyScoreString = 'bad';
+        nyScoreString = 'Ugh. You need a ride home.';
     } else if (gameScore < 75) {
-        nyScoreString = 'good';
+        nyScoreString = 'Not bad ... for a client.';
     } else if (gameScore < 85) {
-        nyScoreString = 'very good';
+        nyScoreString = 'Nice one! You deserve another drink.';
     } else if (gameScore < 95) {
-        nyScoreString = 'great';
+        nyScoreString = 'Too good to be true.';
     } else if (gameScore < 100) {
-        nyScoreString = 'near perfect';
+        nyScoreString = 'Wow! Do you work at Gigo?';
     } else {
-        nyScoreString = 'perfect';
+        nyScoreString = 'You must be Miha. Miha Klinar.';
     }
     return nyScoreString;
 }
@@ -181,9 +199,53 @@ function buildImageFromArray(imgArray) {
         $('#ny-cell-' + (i + 1)).attr('class', 'ny-cell').addClass(imgArray[i]).html(imgArray[i]);
     }
 }
+// Build small image 1 from array
+function buildSmallImage1(imgArray) {
+    for (i = 0; i < imgArray.length; i++) {
+        $('#ny-small-cell-a' + (i + 1)).attr('class', imgArray[i]);
+    }
+}
+// Build small image 2 from array
+function buildSmallImage2(imgArray) {
+    for (i = 0; i < imgArray.length; i++) {
+        $('#ny-small-cell-b' + (i + 1)).attr('class', imgArray[i]);
+    }
+}
 $('.ny-build').click(function() {
     buildImageFromArray(nyImageArray);
 });
+
+// Build image from string
+function stringArrayToClass(imageString) {
+    var stringArray = Array.from(imageString);
+    var classArray = [];
+    for (i = 0; i < numOfSquares; i++) {
+        if (stringArray[i] == 'a') {
+            classArray.push('ny-w');
+        } else if (stringArray[i] == 'b') {
+            classArray.push('ny-g');
+        } else if (stringArray[i] == 'c') {
+            classArray.push('ny-p');
+        } else if (stringArray[i] == 'd') {
+            classArray.push('ny-lp');
+        } else if (stringArray[i] == 'e') {
+            classArray.push('ny-y');
+        } else if (stringArray[i] == 'f') {
+            classArray.push('ny-ly');
+        } else if (stringArray[i] == 'g') {
+            classArray.push('ny-b');
+        } else if (stringArray[i] == 'h') {
+            classArray.push('ny-lb');
+        } else if (stringArray[i] == 'i') {
+            classArray.push('ny-gr');
+        } else if (stringArray[i] == 'j') {
+            classArray.push('ny-r');
+        } else if (stringArray[i] == 'k') {
+            classArray.push('ny-pr');
+        }
+    }
+    return classArray;
+}
 
 // Compare two arrays - return percentage
 var nyGameScore = 100;
@@ -200,8 +262,8 @@ function compareArrays(arrayOne, arrayTwo) {
 }
 
 // Game timer
-var watchSec = 10;
-var playSec = 99;
+var watchSec = 1;
+var playSec = 1;
 
 function startNyGame(watchDuration) {
     var timer, counter = watchDuration;
@@ -230,10 +292,12 @@ function startNyGamePlay(playDuration) {
         };
     }, 1000);
 }
+var numOfNyImagesGame = parseInt($('#ny-game-image--box').children().length);
 
 // Start game
 $('.ny-start-game').click(function() {
-    var array1 = imageStar;
+    var randomNumber = Math.floor((Math.random() * numOfNyImagesGame) + 1);
+    var array1 = stringArrayToClass($('#ny-game-image--box textarea:nth-child(' + randomNumber + ')').val());
     var array2 = [];
     $('.ny-start-wrap').addClass('ny-hidden');
     $('#ny-timer').html(watchSec).show();
@@ -256,9 +320,16 @@ $('.ny-start-game').click(function() {
         $('.ny-result--score').html(finalScore + '%');
         $('.ny-result--text').html(finalScoreString);
         $('.ny-start-game').removeClass('ny-avoid-clicks');
+        buildSmallImage1(array1);
+        buildSmallImage2(array2);
         $(this).removeClass('ny-hidden');
         $(this).dequeue();
     });
+});
+
+// hide submit score button after click
+$('.ny-submit-score').click(function() {
+    $(this).hide();
 });
 
 // Close results
@@ -267,6 +338,8 @@ $('.ny-result-close').click(function() {
     $('.ny-start-wrap').removeClass('ny-hidden');
     $('.ny-square div').attr('class', 'ny-cell ny-p').html('ny-p');
     $('.ny-submit-score').removeClass('ny-avoid-clicks');
+    $('.ny-submit-score').show();
+    $("#ny-score-error").html('');
 });
 
 // Save image to the database
@@ -306,38 +379,6 @@ function ajaxSaveScore() {
             $("#ny-score-error").html(jsonResponse.message);
             $('.ny-submit-score').addClass('ny-avoid-clicks');
         });
-}
-
-// Build image from string
-function stringArrayToClass(imageString) {
-    var stringArray = Array.from(imageString);
-    var classArray = [];
-    for (i = 0; i < numOfSquares; i++) {
-        if (stringArray[i] == 'a') {
-            classArray.push('ny-w');
-        } else if (stringArray[i] == 'b') {
-            classArray.push('ny-g');
-        } else if (stringArray[i] == 'c') {
-            classArray.push('ny-p');
-        } else if (stringArray[i] == 'd') {
-            classArray.push('ny-lp');
-        } else if (stringArray[i] == 'e') {
-            classArray.push('ny-y');
-        } else if (stringArray[i] == 'f') {
-            classArray.push('ny-ly');
-        } else if (stringArray[i] == 'g') {
-            classArray.push('ny-b');
-        } else if (stringArray[i] == 'h') {
-            classArray.push('ny-lb');
-        } else if (stringArray[i] == 'i') {
-            classArray.push('ny-gr');
-        } else if (stringArray[i] == 'j') {
-            classArray.push('ny-r');
-        } else if (stringArray[i] == 'k') {
-            classArray.push('ny-pr');
-        }
-    }
-    return classArray;
 }
 
 $('.ny-test1').click(function() {

@@ -3,6 +3,7 @@ from utils.decorators import validate_csrf
 
 from models.high_score import HighScore
 
+
 class ReactionTestHandler(BaseHandler):
     def get(self):
 

@@ -14,6 +14,7 @@
 
 {% block content %}
 <div class="ny-game-wrap">
+    <p class="ny-menu-display-name"></p>
     <div class="ny-game-box"></div>
     <div class="ny-link ny-home-link ny-editor-link">
         <a href="/ny-game-editor">&lt;&lt; editor</a>
@@ -21,6 +22,16 @@
     <div class="ny-link ny-home-link ny-game-link">
         <a href="/ny-game">game &gt;&gt;</a>
     </div>
+
+    <div id="ny-menu-image--box">
+        {% for item in nyMenuImageList %}
+        <div class="ny-menu-image">
+            <input value="{{ item.first_name }}">
+            <textarea>{{ item.image_string }}</textarea>
+        </div>
+        {% endfor %}
+    </div>
+
 </div>
-<script type="text/javascript" src="../assets/custom/js/ny-game.js"></script>
+<script type="text/javascript" src="../assets/custom/js/ny-game-menu.js"></script>
 {% endblock content %}

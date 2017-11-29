@@ -6,6 +6,9 @@
 .ny-avoid-clicks {
     pointer-events: none;
 }
+.ny-clear-float {
+    clear: both;
+}
 .rotate-180 {
     -ms-transform: rotate(180deg); /* IE 9 */
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
@@ -58,6 +61,14 @@
     width: 33px;
     height: 33px;
 }
+.ny-small-square {
+    padding: 1px;
+    display: inline-block;
+}
+.ny-small-square div {
+    width: 22px;
+    height: 22px;
+}
 
 /* Menu */
 .ny-menu-box {
@@ -89,6 +100,13 @@
 }
 .ny-menu--menu {
     margin-top: 21px;
+}
+#ny-menu-image--box {
+    position: absolute;
+    visibility: hidden;
+}
+.ny-menu-image {
+    height: 0px;
 }
 /* Timer */
 .ny-timer-box {
@@ -127,17 +145,47 @@
 }
 .ny-result--title {
     font-size: 42px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 .ny-result--score {
     font-size: 60px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .ny-result--text {
     font-size: 24px;
 }
+#ny-form-high-score {
+    margin: 35px auto 0px;
+    width: 200px;
+}
+#ny-name-score {
+    border-radius: 0px;
+}
+.ny-submit-score {
+    margin-top: 15px;
+    border-radius: 0px;
+    border: none;
+    width: 100%;
+    background-color: #283890;
+}
+.ny-submit-score:hover {
+    background-color: #283890;
+}
+/* compare screen */
+.ny-compare-box-1,
+.ny-compare-box-2 {
+    width: 490px;
+    height: 490px;
+    margin-top: 16px;
+}
+.ny-compare-box-1 {
+    float: left;
+}
+.ny-compare-box-2 {
+    float: right;
+}
 
-/* Temp array dispay box */
+/* Save array dispay box */
 .ny-save-wrap,
 .ny-start-wrap {
     position: absolute;
@@ -177,30 +225,42 @@
     margin-top: 25px;
     border-radius: 0px;
 }
-#ny-error,
-#ny-score-error {
+#ny-error {
     color: #FFF;
     margin-top: 30px;
     font-size: 20px;
+}
+#ny-score-error {
+    color: #FFF;
+    margin-top: 15px;
+    font-size: 18px;
 }
 /* links */
 .ny-link {
     position: absolute;
     bottom: 18px;
 }
-.ny-link a {
+.ny-link a,
+.ny-link span {
     font-size: 18px;
     color: #FFF;
     text-decoration: none;
+    cursor: pointer;
 }
 .ny-editor-link {
     left: 20px;
+}
+.ny-new-game {
+    right: 20px;
+    bottom: 19px;
 }
 .ny-game-link,
 .ny-menu-link {
     right: 42px;
 }
-.ny-menu2-link {
+.ny-menu2-link,
+.ny-score-board,
+.ny-editor-link2{
     left: 42px;
 }
 /* start button */
@@ -223,4 +283,54 @@
 .ny-start-game img {
     width: 40px;
     filter: invert(100%);
+}
+
+/* Score board */
+.ny-score-box {
+    height: 100%;
+    width: 540px;
+    margin: 0px auto;
+}
+.ny-score-title {
+    text-align: center;
+    font-size: 42px;
+    color: #FFF;
+    padding-top: 15px;
+    margin-bottom: 40px;
+}
+.ny-single-score {
+    width: 100%;
+}
+.ny-score-board--name,
+.ny-score-board--score {
+    font-size: 22px;
+    color: #FFF;
+    height: 49px;
+    display: block;
+    margin: 0px;
+}
+.ny-score-board--name {
+    float: left;
+}
+.ny-score-board--score {
+    float: right;
+}
+.ny-score-board--name {
+    width: 83%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ny-score-board--score {
+    width: 17%;
+}
+
+/* Menu screen */
+.ny-menu-display-name {
+    font-size: 42px;
+    color: #FFF;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
