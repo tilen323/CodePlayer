@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block pageTitle %}
+<title>PartyGameMenu</title>
+{% endblock pageTitle %}
+
+{% block bodyClass%}
+<body class="ny-game ny-body-menu" draggable="false">
+{% endblock bodyClass %}
+
+{% block active %}
+{% endblock active %}
+
+
+{% block content %}
+<div class="ny-game-wrap">
+    <div class="ny-game-box"></div>
+    <div class="ny-link ny-home-link ny-editor-link">
+        <a href="/ny-game-editor">&lt;&lt; editor</a>
+    </div>
+    <div class="ny-link ny-home-link ny-game-link">
+        <a href="/ny-game">game &gt;&gt;</a>
+    </div>
+</div>
+<script type="text/javascript" src="../assets/custom/js/ny-game.js"></script>
+{% endblock content %}

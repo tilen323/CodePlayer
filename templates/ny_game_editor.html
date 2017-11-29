@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block pageTitle %}
-<title>PartyGame</title>
+<title>PartyGameEditor</title>
 {% endblock pageTitle %}
 
 {% block bodyClass%}
@@ -25,33 +25,46 @@
         <div class="ny-menu-item ny-color-btn ny-y">ny-y</div>
         <div class="ny-menu-item ny-color-btn ny-w">ny-w</div>
         <div class="ny-menu-item ny-color-btn ny-gr">ny-gr</div>
+
     </div>
     <div class="ny-menu-box">
         <span class="ny-menu-span">Tools:</span>
         <div class="ny-menu-item ny-lmb ny-w"><img src="/assets/svg/mouse-left.svg"></div>
         <div class="ny-menu-item ny-rmb ny-p"><img src="/assets/svg/mouse-right.svg"></div>
+        <!--<div class="ny-menu-item ny-refresh ny-p"><img src="/assets/svg/refresh.svg"></div>-->
+        <div class="mouse-buttons">
+            <div class="ny-menu-item ny-store ny-lb"><img src="/assets/svg/save.svg"></div>
+        </div>
     </div>
 
     <div class="ny-timer-box">
         <span id="ny-timer"></span>
     </div>
+
     <div class="ny-result-wrap ny-hidden">
-        <span class="ny-result-close">close<img src="/assets/svg/x-mark.svg"></span>
-        <p class="ny-result--title">Results:</p>
-        <p class="ny-result--score"></p>
-        <p class="ny-result--text"></p>
-        <form id="ny-form-high-score" method="post" action="javascript:ajaxSaveScore();">
-            <textarea class="ny-hidden" name="ny-hidden-score" id="ny-hidden-score"></textarea>
-            <input id="ny-name-score" maxlength="30" type="text" class="form-control" name="ny-name-score" placeholder="Your name.." required>
-            <button class="btn btn-primary ny-submit-score">Submit Score</button>
-            <div id="ny-score-error"></div>
-        </form>
+        <div class="ny-result-box">
+            <span class="ny-result-close">close<img src="/assets/svg/x-mark.svg"></span>
+            <p class="ny-result--title">Results:</p>
+            <p class="ny-result--score"></p>
+            <p class="ny-result--text"></p>
+        </div>
     </div>
-    <div class="ny-start-wrap">
-        <div class="ny-start-game ny-b"><span>START</span><img src="/assets/svg/gamepad.svg"></div>
+
+    <div class="ny-save-wrap ny-hidden">
+        <div class="ny-save-array-box">
+            <span id="ny-save-help">Save image?</span>
+            <!--<p id="ny-temp-array-text"></p>-->
+            <form class="ny-submit-image-form" method="post" action="javascript:ajaxSaveImage();">
+                <input id="ny-name" name="name" maxlength="20" type="text" placeholder="Your name.." required>
+                <textarea id="ny-save-array" class="ny-hidden" name="image"></textarea>
+                <button class="btn btn-primary ny-save-btn">SAVE</button>
+                <span class="btn btn-danger ny-cancel-btn">CANCEL</span>
+                <div id="ny-error"></div>
+            </form>
+        </div>
     </div>
-    <div class="ny-link ny-home-link ny-menu2-link">
-        <a href="/ny-game-menu">&lt;&lt; menu</a>
+    <div class="ny-link ny-home-link ny-menu-link">
+        <a href="/ny-game-menu">menu &gt;&gt;</a>
     </div>
 </div>
 <script type="text/javascript" src="../assets/custom/js/ny-game.js"></script>

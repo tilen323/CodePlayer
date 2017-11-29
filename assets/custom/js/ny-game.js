@@ -235,6 +235,7 @@ function startNyGamePlay(playDuration) {
 $('.ny-start-game').click(function() {
     var array1 = imageStar;
     var array2 = [];
+    $('.ny-start-wrap').addClass('ny-hidden');
     $('#ny-timer').html(watchSec).show();
     $(this).addClass('ny-avoid-clicks');
     buildImageFromArray(array1);
@@ -251,6 +252,7 @@ $('.ny-start-game').click(function() {
         }
         var finalScore = compareArrays(array1, array2);
         var finalScoreString = resultString(finalScore);
+        $('#ny-hidden-score').val(finalScore);
         $('.ny-result--score').html(finalScore + '%');
         $('.ny-result--text').html(finalScoreString);
         $('.ny-start-game').removeClass('ny-avoid-clicks');
@@ -262,14 +264,18 @@ $('.ny-start-game').click(function() {
 // Close results
 $('.ny-result-close').click(function() {
     $('.ny-result-wrap').addClass('ny-hidden');
+    $('.ny-start-wrap').removeClass('ny-hidden');
+    $('.ny-square div').attr('class', 'ny-cell ny-p').html('ny-p');
+    $('.ny-submit-score').removeClass('ny-avoid-clicks');
 });
 
+// Save image to the database
 function ajaxSaveImage() {
     var nyInput = $("#ny-name").val();
     var nyInputImage = $("#ny-save-array").val();
     $.ajax({
         type: "POST",
-        url: "/ny-game",
+        url: "/ny-game-editor",
         data: JSON.stringify({
             "name": nyInput,
             "image": nyInputImage
@@ -282,3 +288,58 @@ function ajaxSaveImage() {
             $('.ny-save-btn').hide();
         });
 }
+
+// Save score to the database
+function ajaxSaveScore() {
+    var nyNameScore = $("#ny-name-score").val();
+    var nyInputScore = $("#ny-hidden-score").val();
+    $.ajax({
+        type: "POST",
+        url: "/ny-game",
+        data: JSON.stringify({
+            "name": nyNameScore,
+            "score": nyInputScore
+        }),
+        dataType: "json"
+    })
+        .done(function(jsonResponse) {
+            $("#ny-score-error").html(jsonResponse.message);
+            $('.ny-submit-score').addClass('ny-avoid-clicks');
+        });
+}
+
+// Build image from string
+function stringArrayToClass(imageString) {
+    var stringArray = Array.from(imageString);
+    var classArray = [];
+    for (i = 0; i < numOfSquares; i++) {
+        if (stringArray[i] == 'a') {
+            classArray.push('ny-w');
+        } else if (stringArray[i] == 'b') {
+            classArray.push('ny-g');
+        } else if (stringArray[i] == 'c') {
+            classArray.push('ny-p');
+        } else if (stringArray[i] == 'd') {
+            classArray.push('ny-lp');
+        } else if (stringArray[i] == 'e') {
+            classArray.push('ny-y');
+        } else if (stringArray[i] == 'f') {
+            classArray.push('ny-ly');
+        } else if (stringArray[i] == 'g') {
+            classArray.push('ny-b');
+        } else if (stringArray[i] == 'h') {
+            classArray.push('ny-lb');
+        } else if (stringArray[i] == 'i') {
+            classArray.push('ny-gr');
+        } else if (stringArray[i] == 'j') {
+            classArray.push('ny-r');
+        } else if (stringArray[i] == 'k') {
+            classArray.push('ny-pr');
+        }
+    }
+    return classArray;
+}
+
+$('.ny-test1').click(function() {
+    buildImageFromArray(stringArrayToClass(image1));
+});
