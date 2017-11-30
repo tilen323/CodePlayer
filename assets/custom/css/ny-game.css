@@ -14,6 +14,10 @@
     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
     transform: rotate(180deg);
 }
+.ny-store,
+.ny-menu-color {
+    cursor: pointer;
+}
 .ny-game {
     width: 100%;
     height: 100vh;
@@ -23,6 +27,9 @@
     font-size: 0px;
     font-family: 'Roboto Mono', monospace;
     line-height: 1.2;
+}
+#ny-game-image--box {
+    display: none;
 }
 .ny-game-wrap {
     margin: 0px auto;
@@ -68,6 +75,9 @@
 .ny-small-square div {
     width: 22px;
     height: 22px;
+}
+.ny-lmb img {
+    width: 24px;
 }
 
 /* Menu */
@@ -247,6 +257,9 @@
     text-decoration: none;
     cursor: pointer;
 }
+.ny-score-board,
+.ny-editor-link2,
+.ny-menu2-link,
 .ny-editor-link {
     left: 20px;
 }
@@ -257,11 +270,6 @@
 .ny-game-link,
 .ny-menu-link {
     right: 42px;
-}
-.ny-menu2-link,
-.ny-score-board,
-.ny-editor-link2{
-    left: 42px;
 }
 /* start button */
 .ny-start-game {

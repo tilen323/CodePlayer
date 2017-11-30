@@ -3,6 +3,7 @@ var numOfNyImages = parseInt($('#ny-menu-image--box').children().length);
 var menuImageName = '';
 var menuImageString = '';
 var numOfSquares = 400;
+var starImage = 'cccccccccccccccccccccccccccccccccccccccccccccccccbbcccccccccccccccccbeebccccccccccccccccbeebcccccccccccccccbeeeebcccccccccbbbbbbeeeebbbbbbccccbeeeeeeeeeeeeeebcccccbeeeebeebeeeebcccccccbeeebeebeeebcccccccccbeebeebeebccccccccccbeeeeeeeebcccccccccbeeeeeeeeeebccccccccbeeeeeeeeeebcccccccbeeeeebbeeeeebccccccbeeebbccbbeeebcccccbeebbccccccbbeebccccbbbccccccccccbbbcccccccccccccccccccccccccccccccccccccccccc';
 
 function addSquares(squareNumber) {
     var square = '';
@@ -12,6 +13,7 @@ function addSquares(squareNumber) {
     $('.ny-game-box').append(square);
 };
 addSquares(numOfSquares);
+buildImageFromArray(stringArrayToClass(starImage));
 function buildImageFromArray(imgArray) {
     for (i = 0; i < imgArray.length; i++) {
         $('#ny-cell-' + (i + 1)).attr('class', 'ny-cell').addClass(imgArray[i]).html(imgArray[i]);
